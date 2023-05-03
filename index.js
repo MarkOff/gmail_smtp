@@ -10,7 +10,7 @@ app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-// vladvald47@gmail.com
+// 'vladvald47@gmail.com'
 // 'qlwrgjlhmmopmafu'
 let smtpLogin = process.env.SMTP_LOGIN || '...' ;
 let smtpPassword = process.env.SMTP_PASSWORD || '...' ;
