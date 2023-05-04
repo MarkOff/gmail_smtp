@@ -2,11 +2,14 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors')
 const bodyParser = require('body-parser')
+const dotenv = require("dotenv");
 const app = express();
 const port = process.env.PORT || 3010;
 
+dotenv.config()
+
 app.use(cors( {
-    origin: ["https://markoff.github.io"],
+    origin: ["http://localhost:3000", "https://markoff.github.io"],
     credentials: true
 }))
 app.use(bodyParser.urlencoded({extended: false}))
@@ -31,8 +34,8 @@ let smtpPassword = process.env.SMTP_PASSWORD || '...' ;
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: smtpLogin,
-        pass: smtpPassword
+        user: "vladvald47@gmail.com",
+        pass: "qlwrgjlhmmopmafu"
     }
 });
 
