@@ -5,8 +5,10 @@ const bodyParser = require('body-parser')
 const app = express();
 const port = process.env.PORT || 3010;
 
-
-app.use(cors())
+app.use(cors( {
+    origin: ['https://markoff.github.io/my-portfolio'],
+    credentials: true
+}))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
