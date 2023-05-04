@@ -9,8 +9,7 @@ const port = process.env.PORT || 3010;
 dotenv.config()
 
 app.use(cors( {
-    origin: ["http://localhost:3000", "https://markoff.github.io"],
-    credentials: true
+    origin: ["http://localhost:3000", "https://markoff.github.io"]
 }))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
