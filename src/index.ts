@@ -1,3 +1,5 @@
+import {Request, Response} from 'express';
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors')
@@ -10,13 +12,7 @@ dotenv.config()
 
 const whitelist = ["http://localhost:3000", "https://markoff.github.io"]
 const corsOptions = {
-    origin: function (origin, callback) {
-        if (!origin || whitelist.indexOf(origin) !== -1) {
-            callback(null, true)
-        } else {
-            callback(new Error("Not allowed by CORS"))
-        }
-    },
+    origin: whitelist,
     credentials: true,
 }
 
@@ -49,11 +45,11 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-app.get('/', (req, res) => {
+app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!')
 });
 
-app.post('/sendMessage', async (req, res) => {
+app.post('/sendMessage', async (req: Request, res: Response) => {
 
     let {message, name, email} = req.body
 
