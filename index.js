@@ -6,7 +6,7 @@ const app = express();
 const port = process.env.PORT || 3010;
 
 app.use(cors( {
-    origin: ['https://markoff.github.io/my-portfolio'],
+    origin: ["https://markoff.github.io"],
     credentials: true
 }))
 app.use(bodyParser.urlencoded({extended: false}))
